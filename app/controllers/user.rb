@@ -21,7 +21,6 @@ end
 # delete a user 
 delete '/sessions' do 
 	session[:id] = nil 
-
 	redirect to '/'
 end 
 
@@ -35,7 +34,7 @@ get '/users' do
 end
 #show one 
 get '/users/:id' do
-	erb :'user/user', :layout => :"layout.html"
+	erb :'user/profile'
 end
 # make a new user  
 post '/users' do
