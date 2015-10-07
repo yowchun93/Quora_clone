@@ -18,9 +18,11 @@ post '/sessions' do
 	end
 	erb :'static/error'
 end
-
+# delete a user 
 delete '/sessions' do 
+	session[:id] = nil 
 
+	redirect to '/'
 end 
 
 #get the webpage that has the registration

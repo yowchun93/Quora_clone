@@ -25,17 +25,7 @@ end
 # 	redirect '/'
 # end			
 
-get '/session/new' do 
-	
-end 
 
-post '/session' do 
-
-end
-
-delete '/session' do 
-
-end 
 
 
 
