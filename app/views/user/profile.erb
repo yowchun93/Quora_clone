@@ -1,2 +1,8 @@
 
-<p>Welcome <%= current_user.email %></p>
+
+
+<p> My Questions </p>
+<% @user_questions.each do |question| %>
+	<p><%=question.description%></p>
+<% end %>
+

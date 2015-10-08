@@ -8,5 +8,13 @@ helpers do
 	def logged_in?
 		!current_user.nil?
 	end
+
+	#show the user questions 
+	def show_user_questions
+		if logged_in?
+			@user_questions = @current_user.question
+		end
+	end
+
 	
 end

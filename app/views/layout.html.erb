@@ -7,10 +7,64 @@
     application.css is where you put your styles
   -->
   	<link rel="stylesheet" href="/css/application.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+	<style>
+
+		nav {
+			width: 100%;
+			margin: 20px 0;
+		}
+
+	</style>
+	<!-- <nav>
+		<ul>
+			<li>
+				<a href = '/'> Home </a>
+			</li>
+			<li>
+				<a href = '/'> User </a>
+			</li>
+			<li>
+				<a href = '/'> Profile </a>
+			</li>
+		</ul> -->
+
+	<nav class="navbar navbar-default">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+	      <a class="navbar-brand" href="#">Quora</a>
+	    </div>
+	   <div>
+	    <% if logged_in? %> 
+		   <ul class="nav navbar-nav navbar-right">
+	        <li><a href="/">Home</a></li>
+	         <li class="dropdown">
+	          <a class="dropdown-toggle" data-toggle="dropdown" href="#">User
+	          <span class="caret"></span></a>
+	          <ul class="dropdown-menu">
+	            <li><a href="/users/<%= current_user.id %>">User Profile</a></li>
+	            <li><a href="">Logout</a></li>
+	          </ul>
+	        </li>
+	      </ul>
+	      <% else %>
+	      	<ul class="nav navbar-nav navbar-right">
+		        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+		        <li><a href="/sessions/new"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+		    </ul>
+		  <% end %>
+	    </div>
+	  </div>
+	</nav>
+
 </head>
 <body>
-	<h1> Quooora</h1>
 	<%= yield %>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </body>
 </html>

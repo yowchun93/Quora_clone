@@ -30,11 +30,13 @@ get '/users/new' do
 end 
 # show all 
 get '/users' do
-
+	
 end
 #show one 
 get '/users/:id' do
-	erb :'user/profile'
+	@user_questions = show_user_questions
+	@user_questions.flatten
+	erb :"user/profile", :layout => :"layout.html"
 end
 # make a new user  
 post '/users' do

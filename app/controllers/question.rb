@@ -1,5 +1,6 @@
 # show all 
 get '/questions' do
+	
 	erb :"question/questions", :layout => :"layout.html"
 end
 #show one 
