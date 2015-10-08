@@ -1,8 +1,23 @@
+<style>
+	.newsfeed{
+		text-align: center;
+	}
+	#newsfeed {
+		font-size: 200%;
+	}
+	#questions {
+		font-size: 150%;
+	}
+
+</style>
 
 <body>
-<p> Newsfeed</p>
-
-
+	<div class="newsfeed">
+		<p id ="newsfeed"> Newsfeed </p>
+		<% @all_questions.each do |question| %>
+			<p id="questions"><a href = "/questions/<%= question.id%>"><%= question.description%></a></p>
+		<% end %>
+	</div>
 
 </body>
 

@@ -12,28 +12,9 @@
 	<!-- Optional theme -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 
-	<style>
-
-		nav {
-			width: 100%;
-			margin: 20px 0;
-		}
-
-	</style>
-	<!-- <nav>
-		<ul>
-			<li>
-				<a href = '/'> Home </a>
-			</li>
-			<li>
-				<a href = '/'> User </a>
-			</li>
-			<li>
-				<a href = '/'> Profile </a>
-			</li>
-		</ul> -->
-
-	<nav class="navbar navbar-default">
+</head>
+<body>
+	 <nav class="navbar navbar-default">
 	  <div class="container-fluid">
 	    <div class="navbar-header">
 	      <a class="navbar-brand" href="#">Quora</a>
@@ -51,19 +32,15 @@
 	          </ul>
 	        </li>
 	      </ul>
-	      <% else %>
-	      	<ul class="nav navbar-nav navbar-right">
-		        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-		        <li><a href="/sessions/new"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-		    </ul>
-		  <% end %>
-	    </div>
-	  </div>
+      <% else %>
+      	<ul class="nav navbar-nav navbar-right">
+	        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+	        <li><a href="/sessions/new"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+	    </ul>
+	  <% end %>
 	</nav>
-
-</head>
-<body>
 	<%= yield %>
+
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </body>

@@ -1,8 +1,29 @@
 
-
-
-<p> My Questions </p>
-<% @user_questions.each do |question| %>
-	<p><%=question.description%></p>
-<% end %>
+<style>
+	.questions{
+		text-align: center;
+		font-size: 150%;
+	}
+	.submit-question{
+		text-align: center;
+	}
+</style>
+<body>
+	<div class ="questions">
+		<p> My Questions </p>
+		<% @user_questions.each do |question| %>
+			<p><%=question.description%></p>
+		<% end %>
+	</div>	
+	<div class="submit-question">
+		<p> 
+			Submit Question
+		</p>
+		<form action="/questions" method="post">
+			Answer: </br>
+			<input type="text" name="answer"></br>
+			<input type="submit" value="Submit"> 
+		</form>
+	</div>
+</body>
 

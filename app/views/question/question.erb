@@ -1,0 +1,36 @@
+
+<!-- Question page -->
+<style>
+	.question {
+		text-align: center;
+	}
+	.answers {
+		text-align: center;
+	}
+	.submit-answer{
+		text-align: center;
+	}
+</style>
+
+<body>
+	<div class="question">
+		<p ><%= @question.description %></p>
+		<p>Submitted by User <%= @question.user_id %></p>
+	</div>
+	</br>
+	<div class="submit-answer">
+		<form action="/answers" method="post">
+			Submit Answer: </br>
+			<input type="text" name="answer"></br>
+			<input type="submit" value="Submit"> 
+		</form>
+	</div>
+	</br>
+	<div class="answers">
+		<p> Submitted Answers </p>
+			 <% @question.answer.each do |answer| %>
+			 <p><%= answer.description %>
+		 <% end %>
+	</div>
+
+</body>
