@@ -29,7 +29,8 @@
 	<div class="answers">
 		<p> Submitted Answers </p>
 			 <% @question.answer.each do |answer| %>
-			 <p><%= answer.description %>
+			 <p>Description:<%= answer.description %></p>
+			 <p>Posted By:<%= answer.user_id %></p>
 		 <% end %>
 	</div>
 

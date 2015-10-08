@@ -1,4 +1,3 @@
-
 <style>
 	.questions{
 		text-align: center;
@@ -10,7 +9,7 @@
 </style>
 <body>
 	<div class ="questions">
-		<p> My Questions </p>
+		<p> My submitted questions </p>
 		<% @user_questions.each do |question| %>
 			<p><%=question.description%></p>
 		<% end %>
@@ -25,5 +24,6 @@
 			<input type="submit" value="Submit"> 
 		</form>
 	</div>
+
 </body>
 

@@ -21,7 +21,7 @@ end
 # delete a user 
 delete '/sessions' do 
 	session[:id] = nil 
-	redirect to '/'
+	true
 end 
 
 #get the webpage that has the registration
@@ -40,7 +40,7 @@ get '/users/:id' do
 end
 # make a new user  
 post '/users' do
-	
+
 end
 #update user 
 put '/users/:id' do 
