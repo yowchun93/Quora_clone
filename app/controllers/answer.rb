@@ -11,7 +11,7 @@ post '/answers' do
 	#create answer
 	@answer = Answer.create(description: params[:answer],user_id: session[:id],question_id: session[:question_id])
 	if @answer.save
-		redirect to "/questions/#{question_id}"
+		redirect to "/questions/#session[:question_id]"
 	else
 		@error = "You can only post 1 answer for 1 user"
 		redirect to "/users/session[:id]"

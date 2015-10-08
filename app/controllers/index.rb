@@ -4,18 +4,3 @@ get '/' do
 	erb :"static/homepage", :layout => :"layout.html"
 end
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
