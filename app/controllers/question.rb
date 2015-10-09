@@ -23,10 +23,14 @@ delete '/questions:id' do
 end
 # show all questions which belongs to the user 
 get '/users/:id/questions' do 
-	byebug
 	@user = User.find_by(id: params[:id])
 	@questions_list = Question.where(user_id: @user_id).order(update_at: :desc)
 	return erb :"questions/"
+end
+
+#upvote
+get  '/questions/:id/upvote' do
+	byebug
 end
 
 

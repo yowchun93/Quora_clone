@@ -16,6 +16,12 @@
 	<div class="question">
 		<p ><%= @question.description %></p>
 		<p>Submitted by User <%= @question.user_id %></p>
+		<form action="/questions/:id/upvote" method="get" id="form1">
+		</form>
+		<button type="submit" form="form1" value="Submit">Upvote</button>
+		<form action="/questions/:id/downvote" method="post" id="form2">
+		</form>
+		<button type="submit" form="form2" value="Submit">Downvote</button>
 	</div>
 	</br>
 	<div class="submit-answer">

@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
 	# This is Sinatra! Remember to create a migration!
 	has_many :question
 	has_many :answer 
+	has_many :votes
 	validates_uniqueness_of :email
 
 	def self.authenticate(email,password)
