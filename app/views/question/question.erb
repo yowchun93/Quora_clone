@@ -19,9 +19,11 @@
 		<form action="/questions/:id/upvote" method="get" id="form1">
 		</form>
 		<button type="submit" form="form1" value="Submit">Upvote</button>
-		<form action="/questions/:id/downvote" method="post" id="form2">
+		<form action="/questions/:id/downvote" method="get" id="form2">
 		</form>
 		<button type="submit" form="form2" value="Submit">Downvote</button>
+		<p> Vote Scores </p>
+		<p> <%= @question_vote.question_votes_count %></p>
 	</div>
 	</br>
 	<div class="submit-answer">
@@ -37,7 +39,14 @@
 			 <% @question.answer.each do |answer| %>
 			 <p>Description:<%= answer.description %></p>
 			 <p>Posted By:<%= answer.user_id %></p>
-		 <% end %>
+			 <form action="/questions/:id/upvote" method="get" id="form3">
+				</form>
+				<button type="submit" form="form3" value="Submit">Upvote</button>
+				<form action="/questions/:id/downvote" method="get" id="form4">
+				</form>
+				<button type="submit" form="form4" value="Submit">Downvote</button>
+			<p> Vote Scores </p>
+			<% end %>
 	</div>
 
 </body>

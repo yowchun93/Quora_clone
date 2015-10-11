@@ -6,6 +6,7 @@ end
 get '/questions/:id' do
 	@question = Question.find_by(id: params[:id])
 	session[:question_id] = @question.id
+	@question_vote = QuestionVote.find_by(question_id: session[:question_id])
 	erb :"question/question", :layout => :"layout.html"
 end
 # make a new question  
@@ -30,7 +31,11 @@ end
 
 #upvote
 get  '/questions/:id/upvote' do
-	byebug
+	QuestionVote.create(user_id: session[:id],question_id: session[:question_id],votetype: true,question_votes_count: 1)
+end
+
+get  '/questions/:id/downvote' do
+	QuestionVote.create(user_id: session[:id],question_id: session[:question_id],votetype: true,question_votes_count: -1)
 end
 
 
